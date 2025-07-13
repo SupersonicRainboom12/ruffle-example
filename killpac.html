@@ -16,7 +16,7 @@
 
         .ruffle-container {
             width: 100%; /* Adjust as needed */
-            max-width: 100%; /* Optional: Sets a maximum width */
+            max-width: 673px; /* Optional: Sets a maximum width */
             background-color: white;
             border: 1px solid #ccc;
             padding: 20px;
@@ -26,15 +26,13 @@
 
         h1 {
             color: #333;
-            margin-bottom: 15px;
         }
 
         /* Styling for the Ruffle player itself (within the container) */
         #ruffle-player {
             width: 100%;
-            height: 100%; /* Adjust as needed for your Flash content */
+            height: 673px; /* Adjust as needed for your Flash content */
             background-color: black;
-            margin-top: 15px; /* Adds space between header and Ruffle player */
         }
     </style>
 </head>
@@ -61,7 +59,7 @@
     "splashScreen": false,
     "unmuteOverlay": "hidden",
     // Set the initial scale mode if desired
-    "scale": "showAll" // {Link: For example https://github.com/ruffle-rs/ruffle/issues/18595} to fit the content while maintaining aspect ratio
+    "scale": "100" // {Link: For example https://github.com/ruffle-rs/ruffle/issues/18595} to fit the content while maintaining aspect ratio
 };
         window.addEventListener("load", (event) => {
             const ruffle = window.RufflePlayer.newest();
