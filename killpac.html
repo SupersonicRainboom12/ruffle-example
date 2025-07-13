@@ -9,7 +9,6 @@
             justify-content: center; /* Centers content vertically */
             align-items: center; /* Centers content horizontally */
             min-height: 100vh; /* Ensures the body takes full viewport height */
-            margin: 0; /* Remove default body margin */
             background-color: #f0f0f0; /* Light gray background */
             
         }
@@ -57,9 +56,6 @@
     // Other Ruffle configurations (e.g., autoplay, splashScreen)
     "autoplay": "on",
     "splashScreen": false,
-    "unmuteOverlay": "hidden",
-    // Set the initial scale mode if desired
-    "scale": "100" // {Link: For example https://github.com/ruffle-rs/ruffle/issues/18595} to fit the content while maintaining aspect ratio
 };
         window.addEventListener("load", (event) => {
             const ruffle = window.RufflePlayer.newest();
