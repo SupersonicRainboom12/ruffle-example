@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kill The Pacman - Ruby's Awesome Website</title>
+    <style>
+        body {
+            display: flex; /* Makes the body a flex container */
+            flex-direction: column; /* Stacks children vertically */
+            justify-content: center; /* Centers content vertically */
+            align-items: center; /* Centers content horizontally */
+            min-height: 100vh; /* Ensures the body takes full viewport height */
+            margin: 0; /* Remove default body margin */
+            background-color: #f0f0f0; /* Light gray background */
+        }
+
+        .ruffle-container {
+            width: 80%; /* Adjust as needed */
+            max-width: 600px; /* Optional: Sets a maximum width */
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centers the header and text inside the container */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* Styling for the Ruffle player itself (within the container) */
+        #ruffle-player {
+            width: 100%;
+            height: 673px; /* Adjust as needed for your Flash content */
+            background-color: black;
+            margin-top: 15px; /* Adds space between header and Ruffle player */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ruffle-container">
+        <h1>Kill The Pacman</h1>
+        <div id="ruffle-player">
+            <!-- Ruffle Flash player will be embedded here via JavaScript -->
+        </div>
+        <p> Controls: Arrow Keys to Move, Spacebar to Jump.</p>
+        <p>Originally from <a href="https://www.newgrounds.com/portal/view/189077">ThinXIII on Newgrounds.</a></p>
+
+    <p>This was a weird game, but one I remember fondly due to its unique gameplay and satisfying sounds and visuals. I didn't originally play this on Newgrounds though. Where the hell I originally found it is anyone's guess.</p>
+    </div>
+
+    <!-- Ruffle JS script to embed Flash content -->
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <script>
+        window.RufflePlayer = window.RufflePlayer || {};
+        window.addEventListener("load", (event) => {
+            const ruffle = window.RufflePlayer.newest();
+            const player = ruffle.createPlayer();
+            const container = document.getElementById("ruffle-player");
+            container.appendChild(player);
+            player.load({
+                url: "https://supersonicrainboom12.github.io/ruffle-example/ruffle-example/flashfiles/KillThePacman.swf", // Replace with your .swf file path
+                backgroundColor: "#000",
+            });
+        });
+    </script>
+
+</body>
+</html>
