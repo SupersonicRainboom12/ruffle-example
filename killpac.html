@@ -8,14 +8,14 @@
             flex-direction: column; /* Stacks children vertically */
             justify-content: center; /* Centers content vertically */
             align-items: center; /* Centers content horizontally */
-            min-height: 673vh; /* Ensures the body takes full viewport height */
+            min-height: 100vh; /* Ensures the body takes full viewport height */
+            margin: 0; /* Remove default body margin */
             background-color: #f0f0f0; /* Light gray background */
-            
         }
 
         .ruffle-container {
             width: 100%; /* Adjust as needed */
-            max-width: 669px; /* Optional: Sets a maximum width */
+            max-width: 300px; /* Optional: Sets a maximum width */
             background-color: white;
             border: 1px solid #ccc;
             padding: 20px;
@@ -25,13 +25,15 @@
 
         h1 {
             color: #333;
+            margin-bottom: 15px;
         }
 
         /* Styling for the Ruffle player itself (within the container) */
         #ruffle-player {
-            width: 752px;
-            height: 669px; /* Adjust as needed for your Flash content */
+            width: 749px;
+            height: 673px; /* Adjust as needed for your Flash content */
             background-color: black;
+            margin-top: 15px; /* Adds space between header and Ruffle player */
         }
     </style>
 </head>
@@ -52,11 +54,6 @@
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <script>
         window.RufflePlayer = window.RufflePlayer || {};
-        window.RufflePlayer.config = {
-    // Other Ruffle configurations (e.g., autoplay, splashScreen)
-    "autoplay": "on",
-    "splashScreen": false,
-};
         window.addEventListener("load", (event) => {
             const ruffle = window.RufflePlayer.newest();
             const player = ruffle.createPlayer();
